@@ -1,0 +1,28 @@
+/* CSS Stylesheet */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: #ffffff;
+    
+  }
+  
+  h1, h2 {
+    color: #3498db;
+    position: relative;
+    left: 30%;
+  }
+    
+  body form{
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    left: 50%;
+    height: 120px;
+    width: 335px;
+    }
+
+  
