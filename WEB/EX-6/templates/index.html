@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form with Email Validation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h2>Leave Your Feedback</h2>
+  <div id="result">
+    <p id="status"></p>
+  </div>
+  <form id="Feedback" method="POST" action="/submit">
+    <label for="fname">User Name:</label>
+    <input type="text" id="user_name" name="user_name" onfocus="this.value=''" placeholder="Vasia Pupkin :P" required>
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email" onfocus="this.value=''" placeholder="Enter Email :P" required><br>
+    <br><br>
+
+    <label for="textarea">Please Enter Feedback:</label>
+    <br>
+    <textarea id="textarea" name="textarea" rows="4" cols="35" onfocus="this.value=''" placeholder="Enter TEXT :P" required></textarea>
+    <br><br>
+
+    <input type="submit" id="check" value="GO"><br>
+    <p id="error-message" class="error"></p>
+  </form>
+  
+ 
+  <script>
+
+    function validateEmail(email) {
+    
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+      return emailPattern.test(email);
+    
+    }
+    
+    document.getElementById('Feedback').addEventListener('submit', function(event) {
+    
+      event.preventDefault(); // Prevent the form from submitting
+    
+      const emailInput = document.getElementById('email');
+    
+      const errorMessage = document.getElementById('error-message');
+    
+      if (validateEmail(emailInput.value)) {
+    
+        errorMessage.textContent = ''; // Clear any previous error message
+    
+        alert('Email is valid! Form submitted.');
+        this.submit();
+    
+    // You can add your form submission logic here
+    
+    } else {
+    
+      errorMessage.textContent = 'Please enter a valid email address.';
+    
+    }
+    
+    });
+    
+    </script>
+     <script src="script.js" ></script>
+</body>
+</html> 
